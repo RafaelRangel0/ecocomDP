@@ -167,8 +167,8 @@ my_plot_sites3 <- function(data,
                           id = NA_character_,
                           alpha = 1,
                           labels = TRUE,
-                          color_by = "location_abbrv",
-                          shape = NULL){
+                          color_var = "package_id",
+                          shape_var = "package_id"){
   validate_arguments(fun.name = "plot", fun.args = as.list(environment()))
 
   # check for suggested packages that are required for this function to work
@@ -216,13 +216,10 @@ my_plot_sites3 <- function(data,
     ) %>%
     dplyr::distinct()
 
-  cleaned$location_abbrv = substr(cleaned$location_name, 1, 4)
+  #cleaned$location_abbrv = substr(cleaned$location_name, 1, 4)
 
 
   us_map <- map_data("state")
-
-
-
 
 
   ggplot() +
@@ -248,10 +245,9 @@ my_plot_sites3 <- function(data,
 my_plot_sites3 <- function(data,
                           id = NA_character_,
                           alpha = 1,
-                          labels = TRUE,
-                          color_by = "Red",
-                          shape_by = "location_name",
-                          size_by = 3){
+                          color_var = "Red",
+                          shape_var = "location_name",
+                          size_var = 3){
   validate_arguments(fun.name = "plot", fun.args = as.list(environment()))
 
   # check for suggested packages that are required for this function to work

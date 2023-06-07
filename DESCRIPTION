@@ -114,5 +114,5 @@ Suggests:
     maptools,
     rgdal
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Language: en-US
