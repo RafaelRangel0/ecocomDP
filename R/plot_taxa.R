@@ -1348,20 +1348,38 @@ plot_sites <- function(data,
 #'
 #' @examples
 #' \dontrun{
+#'
+#'
+#'
 #' # Read a dataset of interest
 #' dataset <- read_data("edi.193.5")
 #'
 #' # Plot the dataset
-#' plot_sites(dataset)
+#' my_plot_sites3(dataset)
 #'
 #' # Flatten dataset then plot
 #' dataset %>%
 #'   flatten_data() %>%
-#'   plot_sites()
+#'   my_plot_sites3()
 #' }
 #'
+#'#Plot stacked datasets
+#'
+#'dataset2 <- read_data(ants_L1)
+#'
+#'flattened_data1 = flatten_data(dataset)
+#'flattened_data2 = flatten_data(dataset2)
+#'
+#'stacked_data = dplyr::bind_rows(dataset,dataset2)
+#'
+#'my_plot_sites3(stacked_data)
+#'
+#'
 #' # Plot the example dataset
-#' plot_sites(ants_L1)
+#' my_plot_sites3(ants_L1)
+#'
+#'
+#'
 
 my_plot_sites3 <- function(
     data,
